@@ -1,0 +1,4 @@
+<?= $this->extend('layouts/store') ?>
+<?= $this->section('content') ?>
+<section class="orders-page"><p class="eyebrow">Akun pelanggan</p><h1>Pesanan saya</h1><?php if ($orders === []): ?><div class="empty-state"><h2>Belum ada pesanan.</h2><p>Pesananmu akan tampil di sini setelah checkout.</p><a class="button" href="<?= site_url('katalog') ?>">Lihat katalog</a></div><?php else: ?><div class="order-list"><?php foreach ($orders as $order): ?><a class="order-row" href="<?= site_url('pesanan/' . $order['id']) ?>"><span><strong><?= esc($order['order_no']) ?></strong><small><?= esc($order['created_at']) ?></small></span><span class="status-text"><?= esc($order['status']) ?></span><strong>Rp<?= number_format((int) $order['total'], 0, ',', '.') ?></strong></a><?php endforeach ?></div><?php endif ?></section>
+<?= $this->endSection() ?>

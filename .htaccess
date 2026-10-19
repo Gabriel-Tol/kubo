@@ -1,0 +1,14 @@
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Keep application code, dependencies, runtime data, and project metadata private.
+    RewriteRule ^(?:app|tests|vendor|writable|build|docs|\.agents|\.superpowers|\.taste-skill)(?:/|$) - [F,L,NC]
+    RewriteRule ^(?:\.env(?:\..*)?|env|composer\.(?:json|lock)|spark|phpunit\.xml\.dist|preload\.php|AGENTS\.md|prd\.md)$ - [F,L,NC]
+    RewriteRule (^|/)\. - [F,L]
+
+    # InfinityFree serves htdocs as its fixed document root; forward app requests to CI4 public/.
+    RewriteCond %{REQUEST_URI} !^/public(?:/|$) [NC]
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
