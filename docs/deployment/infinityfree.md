@@ -34,8 +34,8 @@ Ganti email dengan akun milik Anda. Logout lalu login kembali dan pastikan halam
 ## Pemeriksaan keamanan dan batasan
 
 - Pastikan permintaan langsung ke `/.env`, `/app/`, `/vendor/`, `/writable/`, `/writable/uploads/payment-proofs/`, `/composer.json`, dan `/spark` menghasilkan 403/404, bukan isi file.
-- Bukti transfer disimpan privat dan hanya diunduh lewat halaman pesanan pemiliknya. Gambar katalog yang diunggah admin memang berada di `public/assets/images/uploads/`.
-- Jangan gunakan data pembayaran demo untuk transaksi nyata. Ganti keterangan, gambar contoh, kontak, zona, slot, dan produk sebelum presentasi.
+- Bukti pembayaran disimpan privat dan hanya diunduh lewat halaman pesanan pemiliknya. Gambar katalog yang diunggah admin memang berada di `public/assets/images/uploads/`.
+- Sebelum menerima pembayaran nyata, pastikan QRIS di `public/assets/images/products/qris.webp` adalah QRIS toko yang benar dan verifikasi transaksi secara manual. Ganti keterangan, kontak, zona, slot, dan produk contoh sebelum presentasi.
 - Hosting gratis dapat membatasi versi PHP, ekstensi, ukuran unggahan, proses latar, dan koneksi. Aplikasi mensyaratkan PHP 8.2+; cek versi aktual pada panel/akun sebelum upload. Kedaluwarsa pesanan diperiksa saat halaman terkait dibuka, sehingga cron opsional bukan prasyarat demo.
 - Deployment belum diuji pada akun InfinityFree pengguna. Tandai berhasil hanya setelah checklist manual dijalankan pada domain tersebut.
 

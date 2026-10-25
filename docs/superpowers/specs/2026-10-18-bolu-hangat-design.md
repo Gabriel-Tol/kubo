@@ -6,7 +6,7 @@
 
 ## 1. Tujuan dan Sasaran
 
-Membangun situs e-commerce untuk tugas kuliah dengan satu outlet Bolu Hangat (KUBO) di Bandung. Aplikasi mendemonstrasikan alur pemesanan pelanggan dan operasional admin, lalu dapat diunggah oleh mahasiswa ke InfinityFree. Produk, alamat, kontak, jadwal, dan rekening pada MVP adalah data contoh sampai dikonfirmasi pemilik. Rekening harus diberi label demo dan peringatan agar pengunjung tidak melakukan transfer.
+Membangun situs e-commerce untuk tugas kuliah dengan satu outlet Bolu Hangat (KUBO) di Pontianak. Aplikasi mendemonstrasikan alur pemesanan pelanggan dan operasional admin, lalu dapat diunggah oleh mahasiswa ke InfinityFree. Produk, alamat, kontak, dan jadwal pada MVP adalah data contoh sampai dikonfirmasi pemilik. Pembayaran menggunakan QRIS statis dan perlu diverifikasi manual.
 
 Sasaran berhasil bila pelanggan dapat melihat katalog, memesan, mengirim bukti transfer manual, dan melacak status; admin dapat mengelola katalog serta memproses pesanan; total dan stok tetap konsisten; serta akses pelanggan dan admin terpisah. Cakupan mengikuti MVP di PRD. Kuota produksi harian, grafik laporan, notifikasi email, payment gateway, QRIS, GPS, voucher, dan banyak outlet berada di luar MVP.
 

@@ -43,9 +43,10 @@ class CartService
             return ['items' => [], 'subtotal' => 0];
         }
         $items = $this->db->table('cart_items ci')
-            ->select('ci.id, ci.variant_id, ci.quantity, ci.note, pv.label AS variant_label, pv.price, pv.stock, p.name AS product_name, p.slug AS product_slug, p.is_active AS product_active, p.archived_at')
+            ->select('ci.id, ci.variant_id, ci.quantity, ci.note, pv.label AS variant_label, pv.price, pv.stock, p.name AS product_name, p.slug AS product_slug, pi.path AS product_image_path, p.is_active AS product_active, p.archived_at')
             ->join('product_variants pv', 'pv.id = ci.variant_id')
             ->join('products p', 'p.id = pv.product_id')
+            ->join('product_images pi', 'pi.product_id = p.id AND pi.is_primary = 1', 'left')
             ->where('ci.cart_id', $cart['id'])
             ->orderBy('ci.id', 'ASC')
             ->get()->getResultArray();
@@ -182,8 +183,9 @@ class CartService
     private function variantDetails(int $variantId): ?array
     {
         return $this->db->table('product_variants pv')
-            ->select('pv.id AS variant_id, pv.label AS variant_label, pv.price, pv.stock, pv.is_active AS variant_active, p.name AS product_name, p.slug AS product_slug, p.is_active AS product_active, p.archived_at')
+            ->select('pv.id AS variant_id, pv.label AS variant_label, pv.price, pv.stock, pv.is_active AS variant_active, p.name AS product_name, p.slug AS product_slug, pi.path AS product_image_path, p.is_active AS product_active, p.archived_at')
             ->join('products p', 'p.id = pv.product_id')
+            ->join('product_images pi', 'pi.product_id = p.id AND pi.is_primary = 1', 'left')
             ->where('pv.id', $variantId)->get()->getRowArray();
     }
 

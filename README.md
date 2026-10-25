@@ -1,6 +1,6 @@
 # Bolu Hangat KUBO
 
-Aplikasi toko bolu berbasis CodeIgniter 4 untuk katalog, keranjang, checkout, unggah bukti pembayaran demo, pelacakan pesanan, dan operasional admin.
+Aplikasi toko bolu berbasis CodeIgniter 4 untuk katalog, keranjang, checkout, pembayaran QRIS, pelacakan pesanan, dan operasional admin.
 
 ## Kebutuhan
 
@@ -32,4 +32,4 @@ Akun admin tidak disediakan secara default. Instruksi pengaturan admin dan deplo
 - `tests/unit` dan `tests/feature`: pengujian otomatis.
 - `writable`: sesi, cache, log, dan bukti pembayaran privat.
 
-Semua gambar produk bawaan adalah ilustrasi contoh. Informasi pembayaran pada demo bukan rekening untuk transfer nyata.
+Semua gambar produk bawaan adalah ilustrasi contoh. Pembayaran memakai QRIS statis; pelanggan memasukkan nominal pesanan dan admin memeriksa transaksi secara manual.

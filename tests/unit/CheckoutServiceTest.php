@@ -29,7 +29,7 @@ final class CheckoutServiceTest extends CIUnitTestCase
         $user->id = (int) $users->getInsertID();
         $users->addToDefaultGroup($user);
         $this->userId = (int) $user->id;
-        $this->variantId = (int) $this->db->table('product_variants')->where('label', 'Loyang 20 cm')->get()->getRow('id');
+        $this->variantId = (int) $this->db->table('product_variants v')->select('v.id')->join('products p', 'p.id = v.product_id')->where('p.slug', 'bolu-panggang-meses-cokelat')->get()->getRow('id');
         (new CartService($this->db))->add($this->userId, 'checkout-test', $this->variantId, 2, '');
     }
 
@@ -40,8 +40,8 @@ final class CheckoutServiceTest extends CIUnitTestCase
         ]));
 
         $this->assertSame(0, $order['delivery_fee']);
-        $this->assertSame(170000, $order['subtotal']);
-        $this->assertSame(170000, $order['total']);
+        $this->assertSame(40000, $order['subtotal']);
+        $this->assertSame(40000, $order['total']);
         $this->assertSame('pending_payment', $order['status']);
         $this->assertStringStartsWith('BH-', $order['order_no']);
     }
@@ -54,7 +54,7 @@ final class CheckoutServiceTest extends CIUnitTestCase
         ]));
 
         $this->assertSame(20000, $order['delivery_fee']);
-        $this->assertSame(190000, $order['total']);
+        $this->assertSame(60000, $order['total']);
     }
 
     public function testInsufficientStockDoesNotCreateOrder(): void

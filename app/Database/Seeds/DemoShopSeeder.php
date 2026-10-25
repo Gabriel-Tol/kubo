@@ -25,20 +25,20 @@ class DemoShopSeeder extends Seeder
         $categoryIds = array_column($this->db->table('categories')->get()->getResultArray(), 'id', 'slug');
 
         $products = [
-            ['name' => 'Bolu Marmer', 'slug' => 'bolu-marmer', 'description' => 'Bolu lembut dengan perpaduan vanilla dan cokelat.', 'composition' => 'Telur, tepung terigu, gula, mentega, susu, cokelat.', 'allergens' => 'Mengandung telur, gluten, dan susu.', 'category' => 'bolu-favorit', 'variants' => [['label' => 'Loyang 20 cm', 'price' => 85000, 'stock' => 8], ['label' => 'Loyang 24 cm', 'price' => 120000, 'stock' => 4]]],
-            ['name' => 'Bolu Pandan', 'slug' => 'bolu-pandan', 'description' => 'Aroma pandan harum dengan tekstur lembut.', 'composition' => 'Telur, tepung terigu, gula, mentega, pandan, susu.', 'allergens' => 'Mengandung telur, gluten, dan susu.', 'category' => 'bolu-klasik', 'variants' => [['label' => 'Loyang 20 cm', 'price' => 75000, 'stock' => 12]]],
-            ['name' => 'Bolu Cokelat', 'slug' => 'bolu-cokelat', 'description' => 'Bolu cokelat lembut untuk teman minum teh.', 'composition' => 'Telur, tepung terigu, gula, mentega, cokelat, susu.', 'allergens' => 'Mengandung telur, gluten, dan susu.', 'category' => 'bolu-favorit', 'variants' => [['label' => 'Loyang 20 cm', 'price' => 90000, 'stock' => 6]]],
-            ['name' => 'Bolu Keju', 'slug' => 'bolu-keju', 'description' => 'Bolu lembut dengan taburan keju gurih.', 'composition' => 'Telur, tepung terigu, gula, mentega, keju, susu.', 'allergens' => 'Mengandung telur, gluten, dan susu.', 'category' => 'bolu-spesial', 'variants' => [['label' => 'Loyang 20 cm', 'price' => 95000, 'stock' => 5]]],
-            ['name' => 'Bolu Pisang', 'slug' => 'bolu-pisang', 'description' => 'Bolu pisang rumahan dengan rasa manis alami.', 'composition' => 'Pisang, telur, tepung terigu, gula, mentega.', 'allergens' => 'Mengandung telur dan gluten.', 'category' => 'bolu-klasik', 'variants' => [['label' => 'Loyang 20 cm', 'price' => 80000, 'stock' => 0]]],
-            ['name' => 'Bolu Gulung', 'slug' => 'bolu-gulung', 'description' => 'Bolu gulung lembut dengan isian manis.', 'composition' => 'Telur, tepung terigu, gula, mentega, susu.', 'allergens' => 'Mengandung telur, gluten, dan susu.', 'category' => 'bolu-spesial', 'variants' => [['label' => '1 gulung', 'price' => 65000, 'stock' => 9]]],
+            ['name' => 'Bolu Panggang Meses Cokelat', 'slug' => 'bolu-panggang-meses-cokelat', 'image' => 'bolu-panggang-meses-cokelat.webp', 'description' => 'Kue bolu panggang berbentuk cincin dengan taburan meses cokelat, cocok untuk camilan bersama keluarga dan teman.', 'composition' => 'Tepung terigu, telur, gula, margarin, susu, bahan pengembang, vanili, garam, dan meses cokelat.', 'allergens' => 'Mengandung telur, gluten, dan susu.', 'storage_note' => 'Simpan dalam wadah tertutup di tempat sejuk dan kering.', 'category' => 'bolu-favorit', 'variants' => [['label' => 'Loyang 20 cm', 'price' => 20000, 'stock' => 6]]],
+            ['name' => 'Bolu Marmer Pandan', 'slug' => 'bolu-marmer-pandan', 'image' => 'bolu-marmer-pandan.webp', 'description' => 'Bolu panggang bermotif marmer dengan perpaduan warna hijau pandan dan cokelat, memiliki tampilan yang menarik serta cocok untuk menemani waktu santai bersama keluarga.', 'composition' => 'Tepung terigu, telur, gula, margarin, susu, pasta pandan, cokelat atau kakao, vanili, bahan pengembang, dan garam.', 'allergens' => 'Mengandung telur, gluten, dan susu.', 'storage_note' => 'Simpan dalam wadah tertutup di tempat sejuk dan kering.', 'category' => 'bolu-klasik', 'variants' => [['label' => 'Loyang 20 cm', 'price' => 20000, 'stock' => 12]]],
+            ['name' => 'Bolu Marmer Cokelat', 'slug' => 'bolu-marmer-cokelat', 'image' => 'bolu-marmer-cokelat.webp', 'description' => 'Bolu panggang berbentuk cincin dengan motif marmer berupa perpaduan warna cokelat tua dan cokelat muda. Tampilannya khas dan menarik, serta cocok dinikmati sebagai camilan bersama keluarga atau teman.', 'composition' => 'Tepung terigu, telur, gula pasir, margarin, susu, cokelat atau bubuk kakao, vanili, bahan pengembang, dan garam.', 'allergens' => 'Mengandung telur, gluten, dan susu.', 'storage_note' => 'Simpan dalam wadah tertutup di tempat sejuk dan kering.', 'category' => 'bolu-favorit', 'variants' => [['label' => 'Loyang 20 cm', 'price' => 20000, 'stock' => 8], ['label' => 'Loyang 24 cm', 'price' => 20000, 'stock' => 4]]],
+            ['name' => 'Bolu Meses Warna-Warni', 'slug' => 'bolu-meses-warna-warni', 'image' => 'bolu-meses-warna-warni.webp', 'description' => 'Bolu panggang berbentuk cincin dengan warna cokelat muda dan taburan meses warna-warni di permukaannya. Tampilannya ceria dan cocok dijadikan camilan sehari-hari maupun hidangan untuk keluarga dan teman.', 'composition' => 'Tepung terigu, telur, gula pasir, margarin, susu, meses warna-warni, vanili, bahan pengembang, dan garam.', 'allergens' => 'Mengandung telur, gluten, dan susu.', 'storage_note' => 'Simpan dalam wadah tertutup di tempat sejuk dan kering.', 'category' => 'bolu-spesial', 'variants' => [['label' => 'Loyang 20 cm', 'price' => 25000, 'stock' => 5]]],
+            ['name' => 'Bolu Pisang', 'slug' => 'bolu-pisang', 'image' => 'bolu-pisang.webp', 'description' => 'Bolu panggang berbentuk cincin dengan warna cokelat keemasan dan hiasan irisan pisang di bagian atas. Cita rasa manis khas pisang ini cocok dinikmati sebagai camilan bersama keluarga maupun teman.', 'composition' => 'Tepung terigu, pisang matang, telur, gula pasir, margarin atau minyak goreng, susu, vanili, bahan pengembang, dan garam.', 'allergens' => 'Mengandung telur, gluten, dan susu.', 'storage_note' => 'Simpan dalam wadah tertutup di tempat sejuk dan kering. Hindari paparan sinar matahari langsung.', 'category' => 'bolu-klasik', 'variants' => [['label' => 'Loyang 20 cm', 'price' => 25000, 'stock' => 0]]],
         ];
 
         foreach ($products as $product) {
             $variants = $product['variants'];
+            $image = $product['image'];
             unset($product['variants']);
+            unset($product['image']);
             $product['category_id'] = $categoryIds[$product['category']];
             unset($product['category']);
-            $product['storage_note'] = 'Simpan dalam wadah tertutup dan konsumsi selagi segar.';
             $product['is_active'] = true;
             $product['created_at'] = $now;
             $product['updated_at'] = $now;
@@ -54,7 +54,7 @@ class DemoShopSeeder extends Seeder
             }
             $this->db->table('product_images')->insert([
                 'product_id' => $productId,
-                'path' => 'assets/images/products/' . $product['slug'] . '.svg',
+                'path' => 'assets/images/products/' . $image,
                 'alt_text' => $product['name'],
                 'sort_order' => 0,
                 'is_primary' => true,
@@ -63,8 +63,8 @@ class DemoShopSeeder extends Seeder
         }
 
         $this->db->table('delivery_zones')->insertBatch([
-            ['name' => 'Zona A – Coblong', 'description' => 'Area Coblong dan sekitarnya.', 'fee' => 10000, 'is_active' => true, 'created_at' => $now, 'updated_at' => $now],
-            ['name' => 'Zona B – Sukajadi', 'description' => 'Area Sukajadi dan sekitarnya.', 'fee' => 20000, 'is_active' => true, 'created_at' => $now, 'updated_at' => $now],
+            ['name' => 'Zona A – Dalam Kota', 'description' => 'Area Pontianak dalam kota.', 'fee' => 10000, 'is_active' => true, 'created_at' => $now, 'updated_at' => $now],
+            ['name' => 'Zona B – Sekitar Kota', 'description' => 'Area Pontianak dan sekitarnya.', 'fee' => 20000, 'is_active' => true, 'created_at' => $now, 'updated_at' => $now],
         ]);
 
         $this->db->table('time_slots')->insertBatch([
@@ -78,7 +78,7 @@ class DemoShopSeeder extends Seeder
             ['setting_key' => 'shop_name', 'setting_value' => 'Bolu Hangat KUBO (Demo)', 'created_at' => $now, 'updated_at' => $now],
             ['setting_key' => 'slot_lead_minutes', 'setting_value' => '120', 'created_at' => $now, 'updated_at' => $now],
             ['setting_key' => 'payment_deadline_minutes', 'setting_value' => '60', 'created_at' => $now, 'updated_at' => $now],
-            ['setting_key' => 'demo_payment_notice', 'setting_value' => 'Data rekening demo. Jangan melakukan transfer.', 'created_at' => $now, 'updated_at' => $now],
+            ['setting_key' => 'demo_payment_notice', 'setting_value' => 'QRIS statis. Periksa transaksi sebelum menyetujui pembayaran.', 'created_at' => $now, 'updated_at' => $now],
         ]);
     }
 }

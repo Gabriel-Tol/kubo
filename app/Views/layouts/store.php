@@ -9,7 +9,7 @@
 </head>
 <body>
 <header class="site-header">
-    <a class="wordmark" href="<?= site_url('/') ?>" aria-label="KUBO, beranda"><span class="wordmark-mark">K</span><span>KUBO</span></a>
+    <a class="wordmark" href="<?= site_url('/') ?>" aria-label="KUBO, beranda"><img class="wordmark-logo" src="<?= base_url('assets/images/products/KUBO%20Kue%20Bolu%20Bakery%20Badge.webp') ?>" width="56" height="56" alt="Logo KUBO Kue Bolu"></a>
     <nav class="main-nav" aria-label="Navigasi utama">
         <a href="<?= site_url('/') ?>">Beranda</a>
         <a href="<?= site_url('katalog') ?>">Katalog</a>
@@ -21,8 +21,8 @@
 </header>
 <main><?= $this->renderSection('content') ?></main>
 <footer class="site-footer">
-    <div><a class="footer-wordmark" href="<?= site_url('/') ?>">Bolu Hangat KUBO</a><p>Bolu rumahan untuk meja bersama. Bandung.</p></div>
-    <div class="footer-contact"><span>Ambil di toko</span><span>Antar area Bandung</span><span>Data produk dan harga adalah contoh tugas kuliah.</span></div>
+    <div><a class="footer-wordmark" href="<?= site_url('/') ?>">Bolu Hangat KUBO</a><p>Bolu rumahan untuk meja bersama. Pontianak.</p></div>
+    <div class="footer-contact"><span>Ambil di toko</span><span>Antar area Pontianak</span></div>
 </footer>
 </body>
 </html>

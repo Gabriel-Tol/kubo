@@ -1,6 +1,6 @@
 <?= $this->extend('layouts/store') ?>
 <?= $this->section('content') ?>
-<section class="catalog-head"><p class="eyebrow">Menu KUBO · Bandung</p><h1>Katalog bolu</h1><p>Pilih rasa dan ukuran untuk meja di rumah.</p></section>
+<section class="catalog-head"><p class="eyebrow">Menu KUBO · Pontianak</p><h1>Katalog bolu</h1><p>Pilih rasa dan ukuran untuk meja di rumah.</p></section>
 <section class="catalog-layout">
     <form class="filter-panel" method="get" action="<?= site_url('katalog') ?>">
         <label for="q">Cari nama bolu</label><input id="q" name="q" value="<?= esc($filters['q'] ?? '') ?>" placeholder="Mis. pandan">

@@ -32,13 +32,13 @@ final class CatalogPagesTest extends CIUnitTestCase
     {
         $result = $this->get('/katalog?q=pandan');
         $result->assertOK();
-        $result->assertSee('Bolu Pandan');
-        $result->assertDontSee('Bolu Cokelat');
+        $result->assertSee('Bolu Marmer Pandan');
+        $result->assertDontSee('Bolu Panggang Meses Cokelat');
     }
 
     public function testProductDetailShowsCompositionAndVariants(): void
     {
-        $result = $this->get('/produk/bolu-marmer');
+        $result = $this->get('/produk/bolu-marmer-cokelat');
         $result->assertOK();
         $result->assertSee('Loyang 20 cm');
         $result->assertSee('Komposisi');

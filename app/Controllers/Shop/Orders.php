@@ -44,7 +44,7 @@ class Orders extends BaseController
         } catch (InvalidArgumentException $error) {
             return redirect()->back()->withInput()->with('error', $error->getMessage());
         }
-        return redirect()->to(site_url('pesanan/' . $order['id'] . '/bayar'))->with('success', 'Pesanan dibuat. Silakan baca instruksi pembayaran demo.');
+        return redirect()->to(site_url('pesanan/' . $order['id'] . '/bayar'))->with('success', 'Pesanan dibuat. Silakan bayar dengan QRIS.');
     }
 
     public function index(): string
@@ -70,7 +70,7 @@ class Orders extends BaseController
         (new ExpiryService(db_connect()))->expireIfDue($id, new \DateTimeImmutable());
         $order = $this->ownedOrder($id);
         $proofs = db_connect()->table('payment_proofs')->where('order_id', $id)->orderBy('created_at', 'DESC')->get()->getResultArray();
-        return view('shop/payment', ['title' => 'Pembayaran Demo', 'order' => $order, 'proofs' => $proofs]);
+        return view('shop/payment', ['title' => 'Pembayaran QRIS', 'order' => $order, 'proofs' => $proofs]);
     }
 
     public function submitProof(int $id): mixed
